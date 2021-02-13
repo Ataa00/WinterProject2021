@@ -8,7 +8,7 @@ private Boolean log_in;
 public Admin()
 {
 	this.username="username";
-	this.passowrd="passowrd";
+	this.passowrd="password";
 }
 public String getUsername()
 {
@@ -16,7 +16,7 @@ public String getUsername()
 }
 public void setUsername(String username)
 {
-	username=this.username;
+	this.username=username;
 }
 public String getPassowrd()
 {
@@ -24,7 +24,7 @@ public String getPassowrd()
 }
 public void setPassowrd(String Passowrd)
 {
-	passowrd=this.passowrd;
+	this.passowrd=Passowrd;
 }
 public Boolean getLog_in()
 {
@@ -32,6 +32,6 @@ public Boolean getLog_in()
 }
 public void setLog_in(Boolean log_in)
 {
-	log_in=this.log_in;
+	this.log_in=log_in;
 }
 }
