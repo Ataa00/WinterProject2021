@@ -1,9 +1,12 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Admin {
 private String username;
 private String passowrd;
 private Boolean log_in;
+ArrayList<Book>library=new ArrayList<Book>();
 
 public Admin()
 {
@@ -26,6 +29,49 @@ public void setPassowrd(String Passowrd)
 {
 	this.passowrd=Passowrd;
 }
+public void AddBook(String Title,String Author,String ISBN,String Signature)
+{
+	int i;
+	for( i=0;i<library.size();i++)
+	{
+		if(((library.get(i)).getSignature()).equals(Signature))
+			{
+			System.out.println("the book is exist");
+			 i=-1;
+			 break;
+			}
+	}
+	if(i!=-1)
+	{
+	Book book1=new Book(Signature,ISBN,Title,Author); 
+	library.add(book1);
+}
+}
+public Boolean FindBook(String Signature)
+{
+	int i;
+	for( i=0;i<library.size();i++)
+	{
+		if(((library.get(i)).getSignature()).equals(Signature))
+			{
+			//the book is exist
+			 i=-1;
+			 break;
+			}
+	}
+	
+		if(i==-1)
+		{
+		return true;			//the book is exist
+
+		}
+		else {
+			return false; 			//the book is not exist
+
+		}
+	
+}
+
 public Boolean getLog_in()
 {
 	return log_in;
