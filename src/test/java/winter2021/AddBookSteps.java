@@ -14,7 +14,6 @@ public class AddBookSteps {
 	{
 		this.admin=a;//picocontainer
 	}
-	
 	@When("there Admin Wants add book with Title {string} Author {string} Signature {string} and valid ISBN-{int} {string}")
 	public void there_admin_wants_add_book_with_title_author_signature_and_valid_isbn(String title, String author, String signature,Integer int1, String ISBN) {
 	    // Write code here that turns the phrase above into concrete actions
@@ -30,7 +29,6 @@ if((sum%11==0)&&this.admin.getLog_in())//valid isbn
 {
 this.admin.AddBook(title, author, ISBN, signature);
 }
-
 	}
 
 	@Then("AddBook must be successful with valid ISBN-{int}")
@@ -52,6 +50,6 @@ this.admin.AddBook(title, author, ISBN, signature);
         Boolean f=this.admin.FindBook(this.sign);
 		assertTrue(f.equals(false));//book not added
 	}
-
+// function to connect the admin from this class to the other classes
 
 }
