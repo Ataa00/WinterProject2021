@@ -1,83 +1,31 @@
 package main;
 
+import io.cucumber.java.bs.A;
+
 import java.util.ArrayList;
 
-public class Admin {
-private String username;
-private String passowrd;
-private Boolean log_in;
-ArrayList<Book>library=new ArrayList<Book>();
+public class Admin extends User {
+	public Admin()
+	{
 
-public Admin()
-{
-	this.username="username";
-	this.passowrd="password";
-}
-public String getUsername()
-{
-	return username;
-}
-public void setUsername(String username)
-{
-	this.username=username;
-}
-public String getPassowrd()
-{
-	return passowrd;
-}
-public void setPassowrd(String Passowrd)
-{
-	this.passowrd=Passowrd;
-}
-public void AddBook(String Title,String Author,String ISBN,String Signature)
-{
-	int i;
-	for( i=0;i<library.size();i++)
-	{
-		if(((library.get(i)).getSignature()).equals(Signature))
-			{
-			System.out.println("the book is exist");
-			 i=-1;
-			 break;
-			}
 	}
-	if(i!=-1)
+
+	public void AddBook(String Title,String Author,String ISBN,String Signature)
 	{
-	Book book1=new Book(Signature,ISBN,Title,Author); 
-	library.add(book1);
-}
-}
-public Boolean FindBook(String Signature)
-{
-	int i;
-	for( i=0;i<library.size();i++)
-	{
-		if(((library.get(i)).getSignature()).equals(Signature))
-			{
-			//the book is exist
-			 i=-1;
-			 break;
-			}
-	}
-	
-		if(i==-1)
+		int i;
+		for( i=0;i<this.getLibrary().size();i++)
 		{
-		return true;			//the book is exist
-
+			if(((this.getLibrary().get(i)).getSignature()).equals(Signature))
+				{
+				System.out.println("the book is exist");
+				 i=-1;
+				 break;
+				}
 		}
-		else {
-			return false; 			//the book is not exist
-
-		}
-	
-}
-
-public Boolean getLog_in()
-{
-	return log_in;
-}
-public void setLog_in(Boolean log_in)
-{
-	this.log_in=log_in;
-}
+		if(i!=-1)
+		{
+		Book book1=new Book(Signature,ISBN,Title,Author);
+			this.getLibrary().add(book1);
+	}
+	}
 }
