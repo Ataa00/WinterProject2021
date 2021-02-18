@@ -50,6 +50,5 @@ this.admin.AddBook(title, author, ISBN, signature);
         Boolean f=this.admin.FindBook(this.sign);
 		assertTrue(f.equals(false));//book not added
 	}
-// function to connect the admin from this class to the other classes
 
 }
