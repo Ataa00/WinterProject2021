@@ -82,5 +82,68 @@ public class SearchSteps {
         assertEquals( int1.intValue(), bookSearched.size());
 
     }
+    //Scenario 4 --------------------------------------------------------------
+
+
+    @Given("User or Admin has logedin and the library has several books")
+    public void user_or_admin_has_logedin_and_the_library_has_several_books() {
+        this.admin.AddBook("A Promised Land","President Barack Obama","0241491517","s1");
+        this.admin.AddBook("Mythology","Edith Hamilton","0316438529","s3");
+        this.admin.AddBook("A Life on Our Planet","David Attenborough","1529108276","s2");
+        this.admin.AddBook("A Promised Land","aul Rusesabagina","0143038605","s4");
+        this.admin.AddBook("An Ordinary Man : An Autobiography","Paul Rusesabagina","143038605","s5");
+        this.admin.AddBook("The New Jim Crow","Michelle Alexander","1620971933","s6");
+        this.admin.AddBook("Concepts of Programming Languages","Robert Sebesta","1292100559","s7");
+        this.admin.AddBook("Beginning Programming All-in-One Desk Reference For Dummies","Wallace Wang","0470108541","s8");
+        this.admin.AddBook("Programming : Principles and Practice Using C++","Bjarne Stroustrup","0321992784","s9");
+        this.admin.AddBook("CPractice of Programming","Rob Pike","1118714709","s10");
+        this.admin.setLog_in(true);
+
+    }
+
+    @When("Insert a substring as {string} of a title as {string}")
+    public void insert_a_substring_as_of_a_title_as(String substring, String type) {
+
+        this.substring = substring;
+        this.type = type.charAt(0);
+
+    }
+
+    @Then("It must show {int} Books")
+    public void it_must_show_books(Integer int1) {
+        ArrayList<Book> bookSearched = new ArrayList<Book>();
+        bookSearched.addAll(this.admin.searchEngin(this.substring, this.type));
+        assertEquals( int1.intValue(), bookSearched.size());
+        assertEquals(this.admin.getLog_in(),true);
+    }
+
+    //Scenario 5 -----------------------------------------------------------------
+    @When("Insert a substring as {string} of a author as {string}")
+    public void insert_a_substring_as_of_a_author_as(String substring, String type) {
+
+        this.substring = substring;
+        this.type = type.charAt(0);
+
+    }
+
+    @Then("It will show {int} Books")
+    public void it_will_show_books(Integer int1) {
+        ArrayList<Book> bookSearched = new ArrayList<Book>();
+        bookSearched.addAll(this.admin.searchEngin(this.substring, this.type));
+        assertEquals( int1.intValue(), bookSearched.size());
+    }
+
+    //Scenario 6 ------------------------------------------------------------
+    @When("Insert a substring as {string} of an title as {string}")
+    public void insert_a_substring_as_of_an_title_as(String substring, String type) {
+        this.substring = substring;
+        this.type = type.charAt(0);
+    }
+    @Then("It will show {int} books as contains the substring of the title")
+    public void it_will_show_books_as_contains_the_substring_of_the_title(Integer int1) {
+        ArrayList<Book> bookSearched = new ArrayList<Book>();
+        bookSearched.addAll(this.admin.searchEngin(this.substring, this.type));
+        assertEquals( int1.intValue(), bookSearched.size());
+    }
 
 }
