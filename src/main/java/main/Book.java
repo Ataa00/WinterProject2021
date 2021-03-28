@@ -20,26 +20,17 @@ public String getSignature()
 {
 	return Signature;
 }
-public void setISBN(String ISBN)
-{
-	this.ISBN=ISBN;
-}
+
 public String getISBN()
 {
 	return ISBN;
 }
-public void setTitle(String Title)
-{
-	this.Title=Title;
-}
+
 public String getTitle()
 {
 	return Title;
 }
-public void setAuthor(String Author)
-{
-	this.Author=Author;
-}
+
 public String getAuthor()
 {
 	return Author;
