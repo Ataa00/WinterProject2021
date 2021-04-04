@@ -22,16 +22,16 @@ public class SearchSteps {
     @Given("Library has nine books")
     public void library_has_nine_books() {
 
-        this.admin.AddBook("A Promised Land","President Barack Obama","0241491517","s1");
-        this.admin.AddBook("Mythology","Edith Hamilton","0316438529","s3");
-        this.admin.AddBook("A Life on Our Planet","David Attenborough","1529108276","s2");
-        this.admin.AddBook("A Promised Land","aul Rusesabagina","0143038605","s4");
-        this.admin.AddBook("An Ordinary Man : An Autobiography","Paul Rusesabagina","143038605","s5");
-        this.admin.AddBook("The New Jim Crow","Michelle Alexander","1620971933","s6");
-        this.admin.AddBook("Concepts of Programming Languages","Robert Sebesta","1292100559","s7");
-        this.admin.AddBook("Beginning Programming All-in-One Desk Reference For Dummies","Wallace Wang","0470108541","s8");
-        this.admin.AddBook("Programming : Principles and Practice Using C++","Bjarne Stroustrup","0321992784","s9");
-        this.admin.AddBook("CPractice of Programming","Rob Pike","1118714709","s10");
+        this.admin.addBook("A Promised Land","President Barack Obama","0241491517","s1");
+        this.admin.addBook("Mythology","Edith Hamilton","0316438529","s3");
+        this.admin.addBook("A Life on Our Planet","David Attenborough","1529108276","s2");
+        this.admin.addBook("A Promised Land","aul Rusesabagina","0143038605","s4");
+        this.admin.addBook("An Ordinary Man : An Autobiography","Paul Rusesabagina","143038605","s5");
+        this.admin.addBook("The New Jim Crow","Michelle Alexander","1620971933","s6");
+        this.admin.addBook("Concepts of Programming Languages","Robert Sebesta","1292100559","s7");
+        this.admin.addBook("Beginning Programming All-in-One Desk Reference For Dummies","Wallace Wang","0470108541","s8");
+        this.admin.addBook("Programming : Principles and Practice Using C++","Bjarne Stroustrup","0321992784","s9");
+        this.admin.addBook("CPractice of Programming","Rob Pike","1118714709","s10");
     }
 
     @When("I type substring {string} of a title as {string}")
@@ -87,16 +87,16 @@ public class SearchSteps {
 
     @Given("User or Admin has logedin and the library has several books")
     public void user_or_admin_has_logedin_and_the_library_has_several_books() {
-        this.admin.AddBook("A Promised Land","President Barack Obama","0241491517","s1");
-        this.admin.AddBook("Mythology","Edith Hamilton","0316438529","s3");
-        this.admin.AddBook("A Life on Our Planet","David Attenborough","1529108276","s2");
-        this.admin.AddBook("A Promised Land","aul Rusesabagina","0143038605","s4");
-        this.admin.AddBook("An Ordinary Man : An Autobiography","Paul Rusesabagina","143038605","s5");
-        this.admin.AddBook("The New Jim Crow","Michelle Alexander","1620971933","s6");
-        this.admin.AddBook("Concepts of Programming Languages","Robert Sebesta","1292100559","s7");
-        this.admin.AddBook("Beginning Programming All-in-One Desk Reference For Dummies","Wallace Wang","0470108541","s8");
-        this.admin.AddBook("Programming : Principles and Practice Using C++","Bjarne Stroustrup","0321992784","s9");
-        this.admin.AddBook("CPractice of Programming","Rob Pike","1118714709","s10");
+        this.admin.addBook("A Promised Land","President Barack Obama","0241491517","s1");
+        this.admin.addBook("Mythology","Edith Hamilton","0316438529","s3");
+        this.admin.addBook("A Life on Our Planet","David Attenborough","1529108276","s2");
+        this.admin.addBook("A Promised Land","aul Rusesabagina","0143038605","s4");
+        this.admin.addBook("An Ordinary Man : An Autobiography","Paul Rusesabagina","143038605","s5");
+        this.admin.addBook("The New Jim Crow","Michelle Alexander","1620971933","s6");
+        this.admin.addBook("Concepts of Programming Languages","Robert Sebesta","1292100559","s7");
+        this.admin.addBook("Beginning Programming All-in-One Desk Reference For Dummies","Wallace Wang","0470108541","s8");
+        this.admin.addBook("Programming : Principles and Practice Using C++","Bjarne Stroustrup","0321992784","s9");
+        this.admin.addBook("CPractice of Programming","Rob Pike","1118714709","s10");
         this.admin.setLog_in(true);
 
     }

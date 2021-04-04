@@ -1,16 +1,16 @@
 package main;
 
 public class Book {
-private  String ISBN;
-private String Title;
-private String Author;
-public String Signature;
-public Book(String Signature,String ISBN,String Title,String Author)
+private  String isbn;
+private String title;
+private String author;
+private String signature;
+public Book(String signature,String isbn,String title,String author)
 {
-	this.Signature=Signature;
-	this.ISBN=ISBN;
-	this.Title=Title;
-	this.Author=Author;	
+	this.signature=signature;
+	this.isbn=isbn;
+	this.title=title;
+	this.author=author;	
 }
 public Book()
 {
@@ -18,21 +18,21 @@ public Book()
 }
 public String getSignature()
 {
-	return Signature;
+	return signature;
 }
 
 public String getISBN()
 {
-	return ISBN;
+	return isbn;
 }
 
 public String getTitle()
 {
-	return Title;
+	return title;
 }
 
 public String getAuthor()
 {
-	return Author;
+	return author;
 }
 }

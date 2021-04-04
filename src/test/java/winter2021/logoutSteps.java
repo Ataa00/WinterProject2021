@@ -1,6 +1,6 @@
 package winter2021;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -28,6 +28,7 @@ public class logoutSteps {
 	@Then("logout must be successful")
 	public void logout_must_be_successful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(this.admin.getLog_in().equals(false));
+		assertEquals(this.admin.getLog_in(),false);
+
 	}
 }
