@@ -1,7 +1,6 @@
 package winter2021;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,7 +33,7 @@ public class loginSteps {
 	@Then("login must be successful")
 	public void login_must_be_successful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(this.admin.getLog_in().equals(true));
+		assertEquals(this.admin.getLog_in(),true);
 		
 	}
 
@@ -50,7 +49,8 @@ public class loginSteps {
 	@Then("login must be unsuccessful")
 	public void login_must_be_unsuccessful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(this.admin.getLog_in().equals(false));
+		assertEquals(this.admin.getLog_in(),false);
+
 
 	}
 }
