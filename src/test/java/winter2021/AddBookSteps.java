@@ -47,7 +47,7 @@ public class AddBookSteps {
 	public void add_book_must_be_unsuccessful() {
 		// Write code here that turns the phrase above into concrete actions
 		Boolean f=this.admin.FindBook(this.sign);
-		assertEquals(f,false);//book not added
+		assertEquals(false,f);//book not added
 	}
 
 }

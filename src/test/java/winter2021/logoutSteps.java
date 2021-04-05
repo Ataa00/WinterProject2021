@@ -28,7 +28,7 @@ public class logoutSteps {
 	@Then("logout must be successful")
 	public void logout_must_be_successful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(this.admin.getLog_in(),false);
+		assertEquals(false,this.admin.getLog_in());
 
 	}
 }
