@@ -19,15 +19,20 @@ public class AddBookSteps {
 		this.sign=signature;
 		int sum=0;
 		char[] isb = new char[ISBN.length()];//convert isbn to string of char
-		int j=10;
-		for (int i = 0; i <ISBN.length(); i++) {
-			isb[i] = ISBN.charAt(i);
-			sum+=(j--)*(Integer.parseInt(String.valueOf(isb[i])));//sum of numbers isbn*i
-		}
+		sum = checkIsbn(ISBN, sum, isb);
 		if((sum%11==0)&&this.admin.getLog_in())//valid isbn
 		{
 			this.admin.addBook(title, author, ISBN, signature);
 		}
+	}
+	private int checkIsbn(String isbn, int sum, char[] isb) {
+		int j=10;
+		for (int i = 0; i <isbn.length(); i++)
+		{
+			isb[i] = isbn.charAt(i);
+			sum+=(j--)*(Integer.parseInt(String.valueOf(isb[i])));//sum of numbers isbn*i
+		}
+		return sum;
 	} 
 
 	@Then("AddBook must be successful with valid ISBN-{int}")
