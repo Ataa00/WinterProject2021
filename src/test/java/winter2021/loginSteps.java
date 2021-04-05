@@ -33,7 +33,7 @@ public class loginSteps {
 	@Then("login must be successful")
 	public void login_must_be_successful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(this.admin.getLog_in(),true);
+		assertEquals(true,this.admin.getLog_in());
 		
 	}
 
@@ -49,7 +49,7 @@ public class loginSteps {
 	@Then("login must be unsuccessful")
 	public void login_must_be_unsuccessful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(this.admin.getLog_in(),false);
+		assertEquals(false,this.admin.getLog_in());
 
 
 	}
