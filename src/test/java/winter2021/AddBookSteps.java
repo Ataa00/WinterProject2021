@@ -1,7 +1,6 @@
 package winter2021;
 
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.assertEquals;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,22 +19,27 @@ public class AddBookSteps {
 		this.sign=signature;
 		int sum=0;
 		char[] isb = new char[ISBN.length()];//convert isbn to string of char
-		int j=10;
-		for (int i = 0; i <ISBN.length(); i++) {
-			isb[i] = ISBN.charAt(i);
-			sum+=(j--)*(Integer.parseInt(String.valueOf(isb[i])));//sum of numbers isbn*i
-		}
+		sum = checkIsbn(ISBN, sum, isb);
 		if((sum%11==0)&&this.admin.getLog_in())//valid isbn
 		{
-			this.admin.AddBook(title, author, ISBN, signature);
+			this.admin.addBook(title, author, ISBN, signature);
 		}
 	}
+	private int checkIsbn(String isbn, int sum, char[] isb) {
+		int j=10;
+		for (int i = 0; i <isbn.length(); i++)
+		{
+			isb[i] = isbn.charAt(i);
+			sum+=(j--)*(Integer.parseInt(String.valueOf(isb[i])));//sum of numbers isbn*i
+		}
+		return sum;
+	} 
 
 	@Then("AddBook must be successful with valid ISBN-{int}")
 	public void add_book_must_be_successful_with_valid_isbn(Integer int1) {
 		// Write code here that turns the phrase above into concrete actions
 		Boolean f=this.admin.FindBook(this.sign);
-		assertTrue(f.equals(true));//book added
+		assertEquals(true,f);//book added
 	}
 
 	@Given("Admin is logout")
@@ -48,7 +52,7 @@ public class AddBookSteps {
 	public void add_book_must_be_unsuccessful() {
 		// Write code here that turns the phrase above into concrete actions
 		Boolean f=this.admin.FindBook(this.sign);
-		assertTrue(f.equals(false));//book not added
+		assertEquals(false,f);//book not added
 	}
 
 }

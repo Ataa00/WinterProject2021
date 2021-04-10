@@ -1,30 +1,22 @@
 package main;
 
-import io.cucumber.java.bs.A;
-
-import java.util.ArrayList;
-
 public class Admin extends User {
-	public Admin()
-	{
 
-	}
-
-	public void AddBook(String Title,String Author,String ISBN,String Signature)
+	public void addBook(String title,String author,String isbn,String signature)
 	{
 		int i;
 		for( i=0;i<this.getLibrary().size();i++)
 		{
-			if(((this.getLibrary().get(i)).getSignature()).equals(Signature))
+			if(((this.getLibrary().get(i)).getSignature()).equals(signature))
 			{
-				System.out.println("the book is exist");
+		        System.out.println("this boook  exist");
 				i=-1;
 				break;
 			}
 		}
 		if(i!=-1)
 		{
-			Book book1=new Book(Signature,ISBN,Title,Author);
+			Book book1=new Book(signature,isbn,title,author);
 			this.getLibrary().add(book1);
 		}
 	}
