@@ -8,7 +8,6 @@ public class User {
     private String passowrd;
     private Boolean log_in;
     private ArrayList<Book> library;
-    public ArrayList<Book> bookSearched;
 
     public User()
     {
@@ -63,62 +62,89 @@ public class User {
     }
 
     // SearchEngin method to search by title as 't' or author as 'a' or ISBN as 'i' --------------------------------
-    public ArrayList<Book> searchEngin(String substring, char type){
-
-        bookSearched = new ArrayList<Book>();
-//        // I used switch to choose the search type by author as a, title as t or ISBN as i;
-        if(type == 't'){
-            for (Book book : this.getLibrary()) {
-                    if (book.getTitle().contains(substring)) {
-                        bookSearched.add(book);
-                    }
-                }
-            return bookSearched;
+    public ArrayList<Book> searchTitle(String substring){
+        ArrayList<Book> bookSearched = new ArrayList<Book>();
+        for (Book book : this.getLibrary()) {
+            if (book.getTitle().contains(substring)) {
+                bookSearched.add(book);
+            }
         }
-        else if(type == 'a'){
-                for(Book book: this.getLibrary()){
-                    if(book.getAuthor().contains(substring)){
-                        bookSearched.add(book);
-                    }
-                }
-            return bookSearched;
+        return bookSearched;
+    }
+    public ArrayList<Book> searchAuthor(String substring){
+        ArrayList<Book> aouthorSearched = new ArrayList<Book>();
+        for (Book book : this.getLibrary()) {
+            if (book.getAuthor().contains(substring)) {
+                aouthorSearched.add(book);
+            }
         }
-        else if(type == 'i'){
-                for(Book book: this.getLibrary()){
-                    if(book.getISBN().contains(substring)){
-                        bookSearched.add(book);
-                    }
-                }
-            return bookSearched;
+        return aouthorSearched;
+    }
+    public ArrayList<Book> searchISBN(String substring){
+        ArrayList<Book> isbnSearched = new ArrayList<Book>();
+        for (Book book : this.getLibrary()) {
+            if (book.getISBN().contains(substring)) {
+                isbnSearched.add(book);
+            }
         }
-        else{
-            return null;
-        }
-//        switch (type) {
+        return isbnSearched;
+    }
+//    public ArrayList<Book> searchEngin(String substring, char type){
 //
-//            case ('t'):
-//                for (Book book : this.getLibrary()) {
+//        bookSearched = new ArrayList<Book>();
+////        // I used switch to choose the search type by author as a, title as t or ISBN as i;
+//        if(type == 't'){
+//            for (Book book : this.getLibrary()) {
 //                    if (book.getTitle().contains(substring)) {
 //                        bookSearched.add(book);
 //                    }
 //                }
-//                break;
-//            case 'a':
+//            return bookSearched;
+//        }
+//        else if(type == 'a'){
 //                for(Book book: this.getLibrary()){
 //                    if(book.getAuthor().contains(substring)){
 //                        bookSearched.add(book);
 //                    }
 //                }
-//                break;
-//            case 'i':
+//            return bookSearched;
+//        }
+//        else if(type == 'i'){
 //                for(Book book: this.getLibrary()){
 //                    if(book.getISBN().contains(substring)){
 //                        bookSearched.add(book);
 //                    }
 //                }
-//                break;
+//            return bookSearched;
 //        }
-    }
+//        else{
+//            return null;
+//        }
+////        switch (type) {
+////
+////            case ('t'):
+////                for (Book book : this.getLibrary()) {
+////                    if (book.getTitle().contains(substring)) {
+////                        bookSearched.add(book);
+////                    }
+////                }
+////                break;
+////            case 'a':
+////                for(Book book: this.getLibrary()){
+////                    if(book.getAuthor().contains(substring)){
+////                        bookSearched.add(book);
+////                    }
+////                }
+////                break;
+////            case 'i':
+////                for(Book book: this.getLibrary()){
+////                    if(book.getISBN().contains(substring)){
+////                        bookSearched.add(book);
+////                    }
+////                }
+////                break;
+////        }
+//    }
 
     public Boolean getLog_in()
     {
