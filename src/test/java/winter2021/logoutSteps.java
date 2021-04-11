@@ -16,19 +16,19 @@ public class logoutSteps {
 	@Given("Admin is login")
 	public void admin_is_login() {
 	    // Write code here that turns the phrase above into concrete actions
-		this.admin.setLog_in(true);
+		this.admin.setLogIn(true);
 	}
 
 	@When("there Admin logout by clik button logout")
 	public void there_admin_logout_by_clik_button_logout() {
 	    // Write code here that turns the phrase above into concrete actions
-		this.admin.setLog_in(false);
+		this.admin.setLogIn(false);
 	}
 
 	@Then("logout must be successful")
 	public void logout_must_be_successful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(false,this.admin.getLog_in());
+		assertEquals(false,this.admin.getLogIn());
 
 	}
 }
