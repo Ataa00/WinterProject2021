@@ -15,7 +15,7 @@ public class loginSteps {
 	@Given("Admin is log out")
 	public void admin_is_log_out() {
 	    // Write code here that turns the phrase above into concrete actions
-	this.admin.setLog_in(false);
+	this.admin.setLogIn(false);
 
 	}
 
@@ -26,14 +26,14 @@ public class loginSteps {
 		if(username.equals(this.admin.getUsername())&&password.equals(this.admin.getPassowrd()))
 		{
 
-			this.admin.setLog_in(true);
+			this.admin.setLogIn(true);
 		}
 	}
 
 	@Then("login must be successful")
 	public void login_must_be_successful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(true,this.admin.getLog_in());
+		assertEquals(true,this.admin.getLogIn());
 		
 	}
 
@@ -42,14 +42,14 @@ public class loginSteps {
 	    // Write code here that turns the phrase above into concrete actions
 		if(!(password.equals(this.admin.getPassowrd())))
 		{
-			this.admin.setLog_in(false);
+			this.admin.setLogIn(false);
 		}
 		}
 
 	@Then("login must be unsuccessful")
 	public void login_must_be_unsuccessful() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertEquals(false,this.admin.getLog_in());
+		assertEquals(false,this.admin.getLogIn());
 
 
 	}

@@ -7,14 +7,14 @@ public class User {
 
     private String username;
     private String passowrd;
-    private Boolean log_in;
+    private Boolean logIn;
     private List<Book> library;
 
     public User()
     {
         this.username="username";
         this.passowrd="password";
-        this.log_in = false;
+        this.logIn = false;
         this.library = new ArrayList<Book>();
     }
 
@@ -30,35 +30,28 @@ public class User {
     {
         return passowrd;
     }
-    public void setPassowrd(String Passowrd)
+    public void setPassowrd(String passowrd)
     {
-        this.passowrd=Passowrd;
+        this.passowrd=passowrd;
     }
     public List<Book> getLibrary(){
         return this.library;
     }
 
-    public Boolean FindBook(String Signature)
+    public Boolean findBook(String signature)
     {
         int i;
         for( i=0;i<library.size();i++)
         {
-            if(((library.get(i)).getSignature()).equals(Signature))
+            if(((library.get(i)).getSignature()).equals(signature))
             {
                 //the book is exist
                 i=-1;
                 break;
             }
         }
-        if(i==-1)
-        {
-            return true;			//the book is exist
-
-        }
-        else {
-            return false; 			//the book is not exist
-
-        }
+        //the book is not exist
+        return i == -1;			//the book is exist
 
     }
 
@@ -91,12 +84,12 @@ public class User {
         return isbnSearched;
     }
 
-    public Boolean getLog_in()
+    public Boolean getLogIn()
     {
-        return log_in;
+        return logIn;
     }
-    public void setLog_in(Boolean log_in)
+    public void setLogIn(Boolean logIn)
     {
-        this.log_in=log_in;
+        this.logIn = logIn;
     }
 }

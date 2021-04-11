@@ -93,7 +93,7 @@ public class SearchSteps {
         this.admin.addBook("Beginning Programming All-in-One Desk Reference For Dummies","Wallace Wang","0470108541","s8");
         this.admin.addBook("Programming : Principles and Practice Using C++","Bjarne Stroustrup","0321992784","s9");
         this.admin.addBook("CPractice of Programming","Rob Pike","1118714709","s10");
-        this.admin.setLog_in(true);
+        this.admin.setLogIn(true);
 
     }
 
@@ -109,7 +109,7 @@ public class SearchSteps {
         ArrayList<Book> bookSearched = new ArrayList<Book>();
         bookSearched.addAll(this.admin.searchTitle(this.substring));
         assertEquals( int1.intValue(), bookSearched.size());
-        assertEquals(this.admin.getLog_in(),true);
+        assertEquals(true, this.admin.getLogIn());
     }
 
     //Scenario 5 -----------------------------------------------------------------

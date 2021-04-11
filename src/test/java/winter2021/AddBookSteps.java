@@ -20,7 +20,7 @@ public class AddBookSteps {
 		int sum=0;
 		char[] isb = new char[ISBN.length()];//convert isbn to string of char
 		sum = checkIsbn(ISBN, sum, isb);
-		if((sum%11==0)&&this.admin.getLog_in())//valid isbn
+		if((sum%11==0)&&this.admin.getLogIn())//valid isbn
 		{
 			this.admin.addBook(title, author, ISBN, signature);
 		}
@@ -38,20 +38,20 @@ public class AddBookSteps {
 	@Then("AddBook must be successful with valid ISBN-{int}")
 	public void add_book_must_be_successful_with_valid_isbn(Integer int1) {
 		// Write code here that turns the phrase above into concrete actions
-		Boolean f=this.admin.FindBook(this.sign);
+		Boolean f=this.admin.findBook(this.sign);
 		assertEquals(true,f);//book added
 	}
 
 	@Given("Admin is logout")
 	public void admin_is_logout() {
 		// Write code here that turns the phrase above into concrete actions
-		this.admin.setLog_in(false);
+		this.admin.setLogIn(false);
 	}
 
 	@Then("AddBook must be unsuccessful")
 	public void add_book_must_be_unsuccessful() {
 		// Write code here that turns the phrase above into concrete actions
-		Boolean f=this.admin.FindBook(this.sign);
+		Boolean f=this.admin.findBook(this.sign);
 		assertEquals(false,f);//book not added
 	}
 
