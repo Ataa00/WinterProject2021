@@ -1,13 +1,14 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
     private String username;
     private String passowrd;
     private Boolean log_in;
-    private ArrayList<Book> library;
+    private List<Book> library;
 
     public User()
     {
@@ -33,7 +34,7 @@ public class User {
     {
         this.passowrd=Passowrd;
     }
-    public ArrayList<Book> getLibrary(){
+    public List<Book> getLibrary(){
         return this.library;
     }
 
@@ -62,7 +63,7 @@ public class User {
     }
 
     // SearchEngin method to search by title as 't' or author as 'a' or ISBN as 'i' --------------------------------
-    public ArrayList<Book> searchTitle(String substring){
+    public List<Book> searchTitle(String substring){
         ArrayList<Book> bookSearched = new ArrayList<Book>();
         for (Book book : this.getLibrary()) {
             if (book.getTitle().contains(substring)) {
@@ -71,7 +72,7 @@ public class User {
         }
         return bookSearched;
     }
-    public ArrayList<Book> searchAuthor(String substring){
+    public List<Book> searchAuthor(String substring){
         ArrayList<Book> aouthorSearched = new ArrayList<Book>();
         for (Book book : this.getLibrary()) {
             if (book.getAuthor().contains(substring)) {
@@ -80,7 +81,7 @@ public class User {
         }
         return aouthorSearched;
     }
-    public ArrayList<Book> searchISBN(String substring){
+    public List<Book> searchISBN(String substring){
         ArrayList<Book> isbnSearched = new ArrayList<Book>();
         for (Book book : this.getLibrary()) {
             if (book.getISBN().contains(substring)) {
